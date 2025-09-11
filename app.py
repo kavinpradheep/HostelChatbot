@@ -7,7 +7,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Chroma
 
-# Load environment variables from .env file
+# Load environment variables from .env file (for local dev)
 load_dotenv()
 API_KEY = os.getenv("GOOGLE_API_KEY")
 
@@ -25,7 +25,12 @@ documents = splitter.split_documents(docs)
 
 # 2. Create embeddings
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-vectorstore = Chroma.from_documents(documents, embeddings, persist_directory="hostel_db")
+
+# ✅ Use persistence only locally
+if os.environ.get("STREAMLIT_ENV") == "CLOUD":
+    vectorstore = Chroma.from_documents(documents, embeddings)  # in-memory
+else:
+    vectorstore = Chroma.from_documents(documents, embeddings, persist_directory="hostel_db")  # local persistent
 
 # 3. Setup LLM
 llm = ChatGoogleGenerativeAI(
