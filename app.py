@@ -1,5 +1,3 @@
-# streamlit_app.py
-
 import os
 from dotenv import load_dotenv
 import streamlit as st
