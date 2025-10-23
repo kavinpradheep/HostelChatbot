@@ -1,26 +1,11 @@
-# Streamlit for the web interface
 streamlit==1.26.1
-
-# Environment variables
 python-dotenv==1.0.1
-
-# LangChain core
 langchain==0.3.27
-
-# LangChain community extensions
 langchain-community==0.3.31
 langchain-google-genai==3.0.0
 langchain-text-splitters==0.3.11
-
-# PDF handling
 pypdf==6.1.3
-
-# Embeddings & vectorstores
 sentence-transformers==2.2.2
 docarray==0.40.0
-
-# PyTorch (CPU version)
 torch==2.9.0
-
-# Optional: improved logging for Streamlit
 rich==14.2.0
