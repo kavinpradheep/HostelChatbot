@@ -19,6 +19,7 @@ st.write("Ask questions about the hostel rules and SOP.")
 # Path to your PDF
 PDF_PATH = "HostelSOP R1.pdf"
 
+
 # 1. Load and split PDF
 loader = PyPDFLoader(PDF_PATH)
 docs = loader.load()
