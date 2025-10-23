@@ -7,4 +7,4 @@ langchain-text-splitters==0.0.8
 pypdf==3.20.1
 sentence-transformers==2.2.2
 docarray==0.32.3
-torch==2.3.0
+torch==2.3.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
