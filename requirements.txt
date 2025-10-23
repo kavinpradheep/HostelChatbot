@@ -6,3 +6,4 @@ langchain-google-genai
 pypdf
 sentence-transformers
 docarray
+torch==2.9.0
